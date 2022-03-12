@@ -71,8 +71,8 @@ AFRAME.registerComponent("cursor-listener", {
           titleEl.setAttribute("visible", false);
           cursorEl.setAttribute("position", { x: 0, y: 0, z: -1 });
           cursorEl.setAttribute("geometry", {
-            radiusInner: 0.03,
-            radiusOuter: 0.04,
+            radiusInner: 0.01,
+            radiusOuter: 0.02,
           });
         } else {
           //else make the plane invisible
@@ -80,8 +80,8 @@ AFRAME.registerComponent("cursor-listener", {
           titleEl.setAttribute("visible", true);
           cursorEl.setAttribute("position", { x: 0, y: 0, z: -3 });
           cursorEl.setAttribute("geometry", {
-            radiusInner: 0.08,
-            radiusOuter: 0.12,
+            height: 0.1,
+            width: 0.1,
           });
         }
       });
