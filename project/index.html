@@ -28,6 +28,7 @@
             <a-camera 
                 id="camera" 
                 wasd-controls="enabled:false;"
+                look-controls="pointerLockEnabled: true"
             >
 
             <a-entity
@@ -43,11 +44,15 @@
             </a-entity>
 
             <a-entity
+                light="type:ambient"
+            ></a-entity>
+            
+            <a-entity
                 id="camera-cursor"
                 cursor
                 position="0 0 -1"
                 geometry="primitive:ring; radiusInner:0.02; radiusOuter:0.03"
-                material="color:orange;shader:flat"
+                material="color:red;shader:flat"
             ></a-entity>
             
             <a-entity
