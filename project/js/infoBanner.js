@@ -46,8 +46,8 @@ AFRAME.registerComponent("info-banner", {
   
       entityEl.setAttribute("geometry", {
         primitive: "plane",
-        width: 1,
-        height: 1,
+        width: 1.051,
+        height: 1.052,
       });
   
       entityEl.setAttribute("material", { color: "#000" });
@@ -65,31 +65,30 @@ AFRAME.registerComponent("info-banner", {
   
       fadeBackgroundEl.appendChild(entityEl);
     },
+    
     createImageEl: function (item) {
       const entityEl = document.createElement("a-entity");
       entityEl.setAttribute("visible", true);
       entityEl.setAttribute("geometry", {
         primitive: "plane",
-        width:0.95,
-        height: 0.4,
       });
-      entityEl.setAttribute("material", { src: item.banner_url });
-      entityEl.setAttribute("position", { x: 0, y: 0.3, z: 0.05 });
+      entityEl.setAttribute("material", { src: item.banner_url,opacity:0.5 });
+      entityEl.setAttribute("position", { x: 0, y: -0.005, z: 0.05 });
       return entityEl;
     },
     createTitleEl: function (item) {
-      const entityEl = document.createElement("a-entity");
+      const entityEl = document.createElement("a-entity");  
       entityEl.setAttribute("visible", true);
       entityEl.setAttribute("text", {
         shader: "msdf",
-        anchor: "left",
+        align: "center",
         font: "https://cdn.aframe.io/examples/ui/Viga-Regular.json",
         width: 1.2,
         height: 2,
         color: "#fff",
-        value: `${item.title} \n ${item.released_year}`,
+        value: `${item.title} \n (${item.released_year})`,
       });
-      entityEl.setAttribute("position", { x: -0.4, y: -0.05, z: 0.05 });
+      entityEl.setAttribute("position", {  y: 0.1, z: 0.05 });
       return entityEl;
     },
     createDescriptionEl: function (item) {
@@ -97,7 +96,7 @@ AFRAME.registerComponent("info-banner", {
       entityEl.setAttribute("visible", true);
       entityEl.setAttribute("text", {
         shader: "msdf",
-        anchor: "left",
+        align: "center",
         font: "https://cdn.aframe.io/examples/ui/Viga-Regular.json",
         width: 0.75,
         height: 2,
@@ -105,7 +104,7 @@ AFRAME.registerComponent("info-banner", {
         wrapCount: "40",
         value: item.description,
       });
-      entityEl.setAttribute("position", { x: -0.4, y: -0.26, z: 0.05 });
+      entityEl.setAttribute("position", { y: -0.2, z: 0.05 });
       return entityEl;
     },
   });
